@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Magenest_PDFInvoice::pdfinvoice"
+                title="Manage PDF Invoice "
+                module="Magenest_PDFInvoice"
+                sortOrder="60"
+                parent="Magento_Sales::sales"
+                resource="Magenest_PDFInvoice::pdfinvoice"
+        />
+        <add
+                id="Magenest_PDFInvoice::invoice"
+                title="PDF Invoice "
+                module="Magenest_PDFInvoice"
+                sortOrder="70"
+                parent="Magenest_PDFInvoice::pdfinvoice"
+                action="pdfinvoice/invoice/"
+                resource="Magenest_PDFInvoice::invoice"
+        />
+    </menu>
+</config>

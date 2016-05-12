@@ -1,0 +1,15 @@
+<?xml	version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <invoice_setting>
+            <pdfinvoice_label>
+                <pdfinvoice_enable>1</pdfinvoice_enable>
+                <pdfinvoice_use_multistore>1</pdfinvoice_use_multistore>
+                <pdfinvoice_print>1</pdfinvoice_print>
+                <pdfinvoice_send_email>1</pdfinvoice_send_email>
+            </pdfinvoice_label>
+        </invoice_setting>
+
+    </default>
+
+</config>

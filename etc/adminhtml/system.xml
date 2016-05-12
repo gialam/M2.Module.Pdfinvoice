@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pdfinvoice" translate="label" sortOrder="600">
+            <label>PDF Invoice</label>
+        </tab>
+        <section id="invoice_setting" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"	showInStore="1">
+            <label>PDF Invoice Setting</label>
+            <tab>pdfinvoice</tab>
+            <resource>Magenest_PDFInvoice::config_pdfinvoice</resource>
+            <group id="pdfinvoice_label" translate="label"	type="text"	sortOrder="1" showInDefault="1"	showInWebsite="1"	showInStore="1">
+                <label>General Configuration</label>
+                <field id="pdfinvoice_print" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable printing actions of Magento Core on admin</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pdfinvoice_print_frontend" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable printing actions of Magento Core on frontend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field	id="pdfinvoice_set_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1"	showInStore="1">
+                    <label>Set template for pdf</label>
+                    <source_model>Magenest\PDFInvoice\Model\Config\Source\Templates</source_model>
+                </field>
+                <field	id="pdfinvoice_set_template_order" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1"	showInStore="1">
+                    <label>Set template color for pdf order</label>
+                    <source_model>Magenest\PDFInvoice\Model\Config\Source\OptionColor</source_model>
+                </field>
+                <field	id="pdfinvoice_set_template_invoice" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1"	showInStore="1">
+                    <label>Set template color for pdf invoice</label>
+                    <source_model>Magenest\PDFInvoice\Model\Config\Source\OptionColor</source_model>
+                </field>
+                <field	id="pdfinvoice_set_template_creditmemo" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1"	showInStore="1">
+                    <label>Set template for color pdf creditmemo</label>
+                    <source_model>Magenest\PDFInvoice\Model\Config\Source\OptionColor</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

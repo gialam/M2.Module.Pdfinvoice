@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magenest\PDFInvoice\Model\ResourceModel\Grid\Invoice" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_pdf_invoice</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\PDFInvoice\Model\ResourceModel\Invoice</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="pdfinvoice_invoice_listing_data_source" xsi:type="string">Magenest\PDFInvoice\Model\ResourceModel\Grid\Invoice</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="orderFormToolbarButtons" type="Magenest\PDFInvoice\Block\Widget\Button\Toolbar" />
+    </type>
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="invoicesFormToolbarButtons" type="Magenest\PDFInvoice\Block\Widget\Button\Invoice" />
+    </type>
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="creditmemoFormToolbarButtons" type="Magenest\PDFInvoice\Block\Widget\Button\Creditmemo" />
+    </type>
+    <preference for="Magento\Sales\Block\Order\Info\Buttons" type="Magenest\PDFInvoice\Block\Invoice\PrintPdf" />
+</config>
